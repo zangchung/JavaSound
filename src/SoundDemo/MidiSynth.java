@@ -860,7 +860,7 @@ public class MidiSynth extends JPanel implements ControlContext, MidiSynthInterf
                 
             } else if(button.getText().equals(MAKE_BUTTON_TEXT)){
                 CompositionFactory compositionFactory = CompositionFactory.getCompositionFactory();
-                List<ChordInfo> chordInfoList = compositionFactory.getTwinChord();                
+                List<ChordInfo> chordInfoList = compositionFactory.getFreeStyleChord();                
                 
                 
                 System.out.println("chordInfoList.size()="+chordInfoList.size());
@@ -869,7 +869,7 @@ public class MidiSynth extends JPanel implements ControlContext, MidiSynthInterf
                 chordPlayer.init();
                 chordPlayer.play(mMelodyCheck.isSelected(), mChordCheck.isSelected());
                 
-                Groove.start();
+//                Groove.start();
                 
                 System.out.println("mMelodyCheck.isSelected()="+mMelodyCheck.isSelected());
             

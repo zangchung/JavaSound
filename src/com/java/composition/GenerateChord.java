@@ -65,9 +65,11 @@ public class GenerateChord {
         
         for(int i=0; i < MAX_RANDOM_COUNT; i++){
             int noteIndex = random.nextInt(NoteConstants.CHORD_LIST.size());
-            note = NoteConstants.CHORD_LIST.get(noteIndex) + ONE_OCTAVE * preOctave;
-            
-            if(preNote != note)
+            note = NoteConstants.CHORD_LIST.get(noteIndex) + ONE_OCTAVE * preOctave;            
+ 
+            // 이 전 반주의 코드와 같으면 단조로울 수 있어서 추가된 코드.
+            // tocheck: 늘 이전과 달라야 하는 것은 오히려 비슷한 패턴이 생길 수 있음으로 제거하거나 조건에 의해 수행되도로 수정 필요. 
+            if(preNote != note) 
                 break;
             
         }
@@ -211,6 +213,7 @@ public class GenerateChord {
         
     }
     
+    // tocheck: 확률 값을 조정할 필요가 있다. 일률적이 아닌 상황에 따라 다른 확률 값을 적용할 방법을 찾아야 한다.
     private boolean isExtendChord(){
         Random random = new Random();
         

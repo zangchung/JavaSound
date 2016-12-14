@@ -34,7 +34,7 @@ public class CompositionFactory {
         chordInfoList.add(chordInfo);
         
         long tempLength = chordInfo.getLength();
-        for(; tempLength< (musicLength - GenerateChord.WHOLE_NOTE);){
+        for(; tempLength < (musicLength - GenerateChord.WHOLE_NOTE);){
             ChordInfo preChordInfo = chordInfoList.get(chordInfoList.size()-1);                    
             ChordInfo nextChordInfo = generateChord.generateNextChord(preChordInfo);
             chordInfoList.add(nextChordInfo);
